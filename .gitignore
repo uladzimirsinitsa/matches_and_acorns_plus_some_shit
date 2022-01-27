@@ -2,3 +2,5 @@
 *.pyc
 env
 env/
+cookies.pkl
+geckodriver.log
