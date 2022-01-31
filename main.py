@@ -30,10 +30,14 @@ for cookie in cookies:
 def roll(url='https://jj1ba0.blogabet.com/'):
     driver.get(url)
     while True:
-        time.sleep(6)
-        driver.find_element_by_tag_name('body').send_keys(Keys.END)
-        time.sleep(2)
-        driver.find_element_by_link_text('See older').click()
+        try:
+            time.sleep(1)
+            driver.find_element_by_tag_name('body').send_keys(Keys.END)
+            time.sleep(1)
+            driver.find_element_by_link_text('See older').click()
+        except:
+            time.sleep(1)
+            continue
 
 
 def main():
