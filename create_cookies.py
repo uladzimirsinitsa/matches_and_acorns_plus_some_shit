@@ -16,7 +16,7 @@ driver = webdriver.Firefox(service=service)
 driver.get(os.environ['URL'])
 
 print('Log in to the site.')
-time.sleep(30)
+time.sleep(75)
 
 pickle.dump(driver.get_cookies(), open('cookies.pkl', 'wb'))
 
