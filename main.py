@@ -27,21 +27,21 @@ for cookie in cookies:
     driver.add_cookie(cookie)
 
 
-def roll(url='https://jj1ba0.blogabet.com/'):
+def get_full_page(url='https://jj1ba0.blogabet.com/'):
     driver.get(url)
     while True:
         try:
             time.sleep(1)
-            driver.find_element_by_tag_name('body').send_keys(Keys.END)
+            driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
             time.sleep(1)
-            driver.find_element_by_link_text('See older').click()
+            driver.find_element(By.XPATH, '//*[@id="last_item"]/a').click()
         except:
             time.sleep(1)
             continue
 
 
 def main():
-    roll()
+    get_full_page()
     
 
 
